@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================================================== */
+/*  AXRYZURE STORE — global design tokens & base styles                */
+/* ================================================================== */
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --header-h: 120px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-color: rgba(255, 255, 255, 0.14) #0b0b0e;
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-white/75 antialiased;
+    font-feature-settings: 'ss01' on, 'cv05' on, 'cv08' on;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(111, 135, 248, 0.32);
+    color: #fff;
+  }
+
+  /* thin custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b0b0e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    border: 2px solid #0b0b0e;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* global focus visibility */
+  :focus-visible {
+    outline: 2px solid #8ca0fa;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* honor reduced motion everywhere */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* page container */
+  .container-x {
+    @apply mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12;
+  }
+
+  /* mono eyebrow label */
+  .eyebrow {
+    @apply font-mono text-[10.5px] font-medium uppercase tracking-[0.26em] text-accent-300/80;
+  }
+
+  /* filter group legend */
+  .filter-legend {
+    @apply font-mono text-[10.5px] uppercase tracking-[0.22em] text-white/55;
+  }
+
+  /* skeleton shimmer */
+  .skeleton {
+    position: relative;
+    overflow: hidden;
+  }
+  .skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.055), transparent);
+    animation: shimmer 1.8s infinite;
+  }
+
+  /* hide scrollbars on carousels */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* product cards: skip rendering off-screen work in long grids */
+  .product-card {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 480px;
+  }
+
+  /* film grain overlay — subtle texture across the app */
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+
+@layer utilities {
+  /* balance headline wrapping */
+  .text-balance {
+    text-wrap: balance;
+  }
+}
