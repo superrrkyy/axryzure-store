@@ -100,7 +100,7 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <StoreProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/axryzure-store/">
         <ScrollToTop />
         <div className="flex min-h-screen flex-col bg-ink-950">
           <Header />
