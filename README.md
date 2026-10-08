@@ -33,12 +33,27 @@
 
 > **AXRYZURE STORE** adalah toko online premium untuk produk digital (UI kit, template website, ikon, developer tools, dan aset kreatif). Ini aplikasi frontend lengkap dengan alur checkout simulasi yang siap disambungkan ke **Stripe**, **Paddle**, atau **Lemon Squeezy**.
 
-<!-- 📸 Tambahkan screenshot: upload ke assets/ lalu hapus tanda komentar di bawah -->
-<!--
+### 📸 Tampilan
+
 <p align="center">
-  <img src="./assets/screenshot-home.png" width="100%" />
+  <a href="https://superrrkyy.github.io/axryzure-store/">
+    <img src="./assets/screenshot-home.svg" width="420" alt="AXRYZURE STORE - Homepage" />
+  </a>
+  <br>
+  <sub><i>✦ Hero: halaman utama</i></sub>
 </p>
--->
+
+<p align="center">
+  <img src="./assets/screenshot-products.svg" width="100%" alt="Kartu produk" />
+  <br>
+  <sub><i>✦ Kartu produk dengan artwork SVG unik, badge, rating, dan tombol keranjang</i></sub>
+</p>
+
+<p align="center">
+  <img src="./assets/screenshot-cta.svg" width="100%" alt="Call to action" />
+  <br>
+  <sub><i>✦ Ajakan bertindak (call to action) di akhir halaman. <a href="https://superrrkyy.github.io/axryzure-store/">Buka demo live →</a></i></sub>
+</p>
 
 ---
 
