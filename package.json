@@ -5,9 +5,11 @@
   "type": "module",
   "description": "AXRYZURE STORE — a premium storefront for curated digital products, creative assets and developer tools.",
   "scripts": {
-    "dev": "vite",
     "build": "tsc --noEmit && vite build",
+    "dev": "vite",
     "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -29,6 +31,7 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3",
-    "vite": "^6.0.3"
+    "vite": "^6.0.3",
+    "vitest": "^3.2.7"
   }
 }
